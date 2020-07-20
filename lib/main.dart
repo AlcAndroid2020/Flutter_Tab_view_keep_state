@@ -49,7 +49,8 @@ class _MyHomePageState extends State<MyHomePage>
         onPageChanged: (page){
           setState(() {
             _currentindex = page;
-
+            pageController.animateToPage(page,
+                duration: Duration(milliseconds: 500), curve: Curves.ease);
           });
         },
         children: <Widget>[
@@ -70,7 +71,8 @@ class _MyHomePageState extends State<MyHomePage>
         onTap: (index) {
           setState(() {
             _currentindex = index;
-
+            pageController.animateToPage(index,
+                duration: Duration(milliseconds: 500), curve: Curves.ease);
           });
         },
       ), // This trailing comma makes auto-formatting nicer for build methods.
